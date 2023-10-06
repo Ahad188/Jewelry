@@ -7,7 +7,7 @@ import 'swiper/css';
 import './style.css'
 const Banner = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-5">
 
 <>
       <Swiper
