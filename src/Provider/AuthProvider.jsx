@@ -1,11 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile  } from "firebase/auth";
 import { app } from "../Components/Firebase/firebase.config";
+import axios from "axios";
  
  
  
 export const AuthContext = createContext(null)
 const auth = getAuth(app);
+
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
      const [user, setUser] = useState(null);
@@ -34,15 +36,27 @@ const AuthProvider = ({ children }) => {
           });
         };
      useEffect(()=>{
-          const unsubscribe = onAuthStateChanged(auth, loggedUser => {
-          //     console.log('logged in user inside auth state observer', loggedUser)
-              setUser(loggedUser);
-               setLoading(true)
-          })
-  
-          return () => {
-              unsubscribe();
-          }
+          const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
+               //   console.log("logged in user inside auth state observer", loggedUser);
+               setUser(loggedUser);
+               if (loggedUser) {
+                 axios
+                   .post("https://presenter-server.vercel.app/jwt", { email: loggedUser.email })
+                   .then((data) => {
+                     // console.log(data.data.token);
+                     localStorage.setItem("Token", data.data.token);
+                     setLoading(false);
+                   });
+               } else {
+                 localStorage.removeItem("Token");
+               }
+         
+               // setLoading(false)
+             });
+         
+             return () => {
+               unsubscribe();
+             };
       }, [])
          
 

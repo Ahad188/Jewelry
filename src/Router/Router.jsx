@@ -5,6 +5,7 @@ import AllProduct from "../Components/Page/AllProduct/AllProduct";
 import ErrorPage from "../Components/Page/ErrorPage/ErrorPage";
 import Login from "../Components/Login/Login"; 
 import Singup from "../Components/Singup/Singup";
+import Private from "./Private";
  
  
  
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
                },
                {
                     path:'/all-product',
-                    element:<AllProduct></AllProduct>
+                    element:<Private><AllProduct></AllProduct></Private>
                },
                {
                     path:'/login',

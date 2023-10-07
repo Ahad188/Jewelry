@@ -1,16 +1,21 @@
 import logo from '../../../assets/logo/logo.jpg'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaCartPlus} from "react-icons/fa";
 import './navbar.css'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import useCart from '../../../hookes/useCart';
  
 
 const Navbar = () => {
+     const navigate = useNavigate()
      const {user,logOut} = useContext(AuthContext)
+     const [cart] = useCart()
      const handelLogout=()=>{
           logOut()
-          .then()
+          .then(
+               navigate('/login')
+          )
          .catch(error => console.log(error));
      }
 
@@ -22,7 +27,7 @@ const Navbar = () => {
     <li>
         <Link to="/dashboard/my-class" className="text-xl">
             
-                <div className="badge bg-[#c7dfdf]">+{   0} <FaCartPlus/></div>
+                <div className="badge bg-[#c7dfdf]">+{cart?.length || 0} <FaCartPlus/></div>
            
         </Link>
     </li>

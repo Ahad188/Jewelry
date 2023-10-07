@@ -1,7 +1,61 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import useCart from "../../hookes/useCart";
+
  
  
  const Card = ({item}) => {
      const { name, photo, price, rating, category, _id } = item;
+     const { user } = useContext(AuthContext);
+      
+     const navigate = useNavigate();
+     const location = useLocation();
+     const [, refetch] = useCart();
+
+     const handelAddtoCard=(item)=>{
+          if(user && user.email){
+               console.log(user);
+          const itemCart = { classId: _id, photo,   price, email: user?.email };
+          fetch("http://localhost:5000/carts", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(itemCart),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.insertedId) {
+            refetch();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: " class added my class",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+          }
+          else {
+               Swal.fire({
+                 title: "Please login to Join the class",
+                 icon: "warning",
+                 showCancelButton: true,
+                 confirmButtonColor: "#3085d6",
+                 cancelButtonColor: "#d33",
+                 confirmButtonText: "Login now!",
+               }).then((result) => {
+                 if (result.isConfirmed) {
+                   navigate("/login", { state: { from: location } });
+                 }
+               });
+             }
+     }
+
+
    return (
      <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
