@@ -16,7 +16,7 @@ const Popular = () => {
     <div className="container"> 
     {/* <h3 className='text-center text-xl'> Popular </h3> */}
     <Tabs className='mx-auto w-[1200px] my-10'>
-    <TabList className='mx-auto w-[500px] text-xl text-orange-500'>
+    <TabList className='mx-auto md:w-[500px] md:text-xl text-orange-500'>
       <Tab>Neckless</Tab>
       <Tab>Ring</Tab>
       <Tab>Bracelet</Tab>
