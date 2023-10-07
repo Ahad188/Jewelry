@@ -7,7 +7,7 @@ const ShopCard = () => {
      const [products] = usejewelry()
   return (
     <div className="container mx-auto my-10">
-     <h3 className="text-center text-3xl my-5 ">Addible Products</h3>
+     <h3 className="text-center text-3xl my-5 font-bold ">Addible Products</h3>
      <div className="divider"></div> 
      <div className="md:grid md:grid-cols-3 gap-5 my-2">
      {

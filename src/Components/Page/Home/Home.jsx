@@ -4,6 +4,7 @@ import Location from "../Location/Location"
 import New from "../New/New"
 import Popular from "../Popular/Popular"
 import PopularCard from "../Popular/PopularCard"
+import Review from "../Review/Review"
 import ShopCard from "../ShopCard/ShopCard"
 import UpComing from "../UpComing/UpComing"
 
@@ -19,6 +20,7 @@ const Home = () => {
      <PopularCard/>
      <ShopCard/>
      <Location/>
+     <Review/>
      <New/>
      </>
   )
