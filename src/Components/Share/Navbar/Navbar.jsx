@@ -8,7 +8,7 @@ const Navbar = () => {
      const user = true;
      const navOptions = <>
      <li><Link className="text-xl" to="/">Home</Link></li>
-    <li><Link className="text-xl" to="/">All-Jewelry</Link></li>
+    <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
     
     {
       user ? <li><Link className="text-xl" to="/dashboard/dashHome">Dashboard</Link></li>:
