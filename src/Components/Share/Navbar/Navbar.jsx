@@ -5,15 +5,12 @@ import './navbar.css'
  
 
 const Navbar = () => {
-     const user = true;
+     // const user = true;
      const navOptions = <>
      <li><Link className="text-xl" to="/">Home</Link></li>
     <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
     
-    {
-      user ? <li><Link className="text-xl" to="/dashboard/dashHome">Dashboard</Link></li>:
-       ''
-    }
+     
     <li>
         <Link to="/dashboard/my-class" className="text-xl">
             
@@ -22,17 +19,8 @@ const Navbar = () => {
         </Link>
     </li>
      
-    {
-        user ? <>
-            <span className="flex text-xl justify-between items-center">{user?.displayName}
-            <img className="h-7 w-7 mt-2 rounded-full" src={user?.photoURL} alt="" />
-            </span>
-          
-            <button   className="btn btn-ghost">LogOut</button>
-        </> : <>
-            <li><Link className="text-xl" to="/login">Login</Link></li>
-        </>
-    }
+    
+    <li><Link className="text-xl" to="/login">Login</Link></li>
      
    
     
