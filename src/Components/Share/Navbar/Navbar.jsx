@@ -1,7 +1,7 @@
 import logo from '../../../assets/logo/logo.jpg'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaCartPlus} from "react-icons/fa";
-import './navbar.css'
+ 
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import useCart from '../../../hookes/useCart';
@@ -25,7 +25,7 @@ const Navbar = () => {
     
      
     <li>
-        <Link to="/dashboard/my-class" className="text-xl">
+        <Link to="/dashboard/my-cart" className="text-xl">
             
                 <div className="badge bg-[#c7dfdf]">+{cart?.length || 0} <FaCartPlus/></div>
            

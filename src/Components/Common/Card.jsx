@@ -32,7 +32,7 @@ import useCart from "../../hookes/useCart";
             Swal.fire({
               position: "top-end",
               icon: "success",
-              title: " class added my class",
+              title: "  add to cart",
               showConfirmButton: false,
               timer: 1500,
             });

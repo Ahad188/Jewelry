@@ -6,6 +6,9 @@ import ErrorPage from "../Components/Page/ErrorPage/ErrorPage";
 import Login from "../Components/Login/Login"; 
 import Singup from "../Components/Singup/Singup";
 import Private from "./Private";
+import Dashboard from "../Layout/Dashboard";
+import Dboard from "../Components/Page/Dboard/DbordHome/Dboard";
+import Mycart from "../Components/Page/Dboard/Mycart/Mycart";
  
  
  
@@ -34,6 +37,20 @@ const router = createBrowserRouter([
                     element: <Singup/>
                 }
                
+          ]
+     },
+     {
+          path:'/dashboard',
+          element:<Private><Dashboard/></Private>,
+          children:[
+               {
+                    path:'/dashboard/d-board',
+                    element:<Dboard/>
+               },
+               {
+                    path:'/dashboard/my-cart',
+                    element:<Mycart/>
+               }
           ]
      }
 ])
