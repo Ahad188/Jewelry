@@ -3,7 +3,7 @@ import img2 from'../../../assets/banner/bg-1.jpg'
 
 const New = () => {
   return (
-    <div className="container mx-auto bg-orange-300 h-[300px]">
+    <div className="container my-10 mx-auto bg-orange-300 h-[300px]">
            
           
              

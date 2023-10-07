@@ -1,7 +1,10 @@
 import Banner from "../Banner/Banner"
 import Hero from "../Hero/Hero"
+import Location from "../Location/Location"
 import New from "../New/New"
 import Popular from "../Popular/Popular"
+import PopularCard from "../Popular/PopularCard"
+import ShopCard from "../ShopCard/ShopCard"
 import UpComing from "../UpComing/UpComing"
 
  
@@ -13,6 +16,9 @@ const Home = () => {
      <UpComing/>
      <Popular/>
      <Hero/>
+     <PopularCard/>
+     <ShopCard/>
+     <Location/>
      <New/>
      </>
   )
