@@ -2,10 +2,18 @@ import logo from '../../../assets/logo/logo.jpg'
 import { Link } from 'react-router-dom'
 import { FaCartPlus} from "react-icons/fa";
 import './navbar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../../Provider/AuthProvider';
  
 
 const Navbar = () => {
-     // const user = true;
+     const {user,logOut} = useContext(AuthContext)
+     const handelLogout=()=>{
+          logOut()
+          .then()
+         .catch(error => console.log(error));
+     }
+
      const navOptions = <>
      <li><Link className="text-xl" to="/">Home</Link></li>
     <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
@@ -19,8 +27,15 @@ const Navbar = () => {
         </Link>
     </li>
      
-    
-    <li><Link className="text-xl" to="/login">Login</Link></li>
+    {
+     user?
+     <span className="flex text-xl justify-between items-center">{user?.displayName}
+     <img className="h-7 w-7 mt-2 rounded-full" src={user?.photoURL} alt="" />
+     <li><button onClick={ handelLogout} className="text-xl" to="/login">LogOut</button></li> 
+     </span>
+     :
+     <li><Link className="text-xl" to="/login">Login</Link></li> 
+    }
      
    
     

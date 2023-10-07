@@ -10,7 +10,7 @@ const PopularCard = ({items}) => {
      <div className='grid md:grid-cols-3 gap-10 my-5'>
       {
           items?.slice(0,3).map(item=><Card
-          key={item.id}
+          key={item._id}
           item={item}
           />)
       }

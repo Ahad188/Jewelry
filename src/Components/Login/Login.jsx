@@ -1,23 +1,32 @@
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate,   } from "react-router-dom";
  
-import { useState } from "react";
+import { useContext, useState } from "react";
 import SocialLogin from "../Share/SocialLogin/SocialLogin";
+import { AuthContext } from "../../Provider/AuthProvider";
 // import SocialLogin from "../Share/SochailLogin/SocialLogin";
 
 
 const Login = () => {
+     const {singIn,} = useContext(AuthContext)
      const [show, setShow] = useState(false)
-     // const {signIn} = useAuth()
      const navigate = useNavigate();
      const location = useLocation();
 
      const from = location.state?.from?.pathname || "/";
 
+     
+
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-     // console.log(data)
+     console.log(data)
+     singIn(data.email, data.password)
+     .then((result)=>{
+          const login = result.user;
+          console.log(login);
+          navigate(from, { replace: true });
+     })
       
 
 };
@@ -52,9 +61,9 @@ const Login = () => {
         <div className="form-control mt-6">
           <input type="submit" className="btn bg-[#2e9cf0] w-80" value="Login" />
         </div>
-               <dir>
-                    <p>I have no account ? Please <Link to='/register' className="link">Register</Link></p>
-               </dir>
+               
+                    <p>I have no account ? Please <Link to='/sing-up' className="link">Register</Link></p>
+                
           <div>
            <SocialLogin></SocialLogin>
           </div>

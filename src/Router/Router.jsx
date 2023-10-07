@@ -3,8 +3,12 @@ import Layout from "../Layout/Layout";
 import Home from "../Components/Page/Home/Home";
 import AllProduct from "../Components/Page/AllProduct/AllProduct";
 import ErrorPage from "../Components/Page/ErrorPage/ErrorPage";
-import Login from "../Components/Login/Login";
-import Register from "../Components/Register/Register";
+import Login from "../Components/Login/Login"; 
+import Singup from "../Components/Singup/Singup";
+ 
+ 
+ 
+ 
 
 const router = createBrowserRouter([
      {
@@ -24,10 +28,11 @@ const router = createBrowserRouter([
                     path:'/login',
                     element:<Login/>
                },
-               {
-                    path:'/register',
-                    element:<Register/>
-               }
+                {
+                    path:'/sing-up',
+                    element: <Singup/>
+                }
+               
           ]
      }
 ])
