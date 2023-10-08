@@ -10,6 +10,7 @@ import Dashboard from "../Layout/Dashboard";
 import Dboard from "../Components/Page/Dboard/DbordHome/Dboard";
 import Mycart from "../Components/Page/Dboard/Mycart/Mycart";
 import Payment from "../Components/Page/Dboard/Payment/Payment";
+import Payhistory from "../Components/Page/Dboard/PayHis/Payhistory";
  
  
  
@@ -55,7 +56,11 @@ const router = createBrowserRouter([
                {
                     path:'/dashboard/payment',
                     element:<Payment/>
-               }
+               },
+               {
+                    path:'/dashboard/history',
+                    element:<Payhistory/>
+               },
           ]
      }
 ])

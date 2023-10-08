@@ -36,7 +36,7 @@ import useCart from "../hookes/useCart";
                 <>
                 <li><NavLink to="/dashboard/d-board"><FaHome></FaHome> User Home</NavLink></li>
                     <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                    <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
+                    <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
                     <li>
                         <NavLink to="/dashboard/my-cart"><FaShoppingCart></FaShoppingCart> My Cart
                             <span className="badge bg-[#c7dfdf]">+{cart?.length || 0}</span>
