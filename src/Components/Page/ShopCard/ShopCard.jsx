@@ -13,7 +13,7 @@ const ShopCard = () => {
      {
                products?.slice(0,6).map(item=><Card
               
-               key={item.id}
+               key={item._id}
                item={item}
                />)
           }

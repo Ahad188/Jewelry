@@ -4,8 +4,8 @@ import useCart from "../hookes/useCart";
   
  
  const Dashboard = () => {
-     const isAdmin = false;
-     const [cart] = useCart()
+      const [cart] = useCart()
+      const isAdmin = true;
    return (
      <div>
           <div className="drawer lg:drawer-open">
@@ -21,16 +21,16 @@ import useCart from "../hookes/useCart";
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
     {
                isAdmin ? <>
-                <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> User Home</NavLink></li>
-                    <li><NavLink to="/dashboard/additem"><FaUtensils/> Add an Item</NavLink></li>
-                    <li><NavLink to="/dashboard/manageitems"><FaWallet></FaWallet> Mange Item</NavLink></li>
-                    <li><NavLink to="/"><FaBook></FaBook> Mange Booking(not implemented)</NavLink></li>
-                    <li><NavLink to="/dashboard/allusers"><FaUser></FaUser> All users</NavLink></li>
+                <li><NavLink to="/dashboard/adminHome"><FaHome></FaHome> Admin Home</NavLink></li>
+                    <li><NavLink to="/dashboard/addProduct">  Add Product</NavLink></li>
+                    <li><NavLink to="/dashboard/manejproduct"><FaWallet></FaWallet> Mange Product</NavLink></li>
+                    <li><NavLink to="/#"><FaBook></FaBook> Mange Booking </NavLink></li>
+                    <li><NavLink to="/dashboard/allurers"><FaUser></FaUser> All users</NavLink></li>
                 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                    <li><NavLink to="/menu"> Our Menu</NavLink></li>
-                    <li><NavLink to="/order/salad">Order Food</NavLink></li>
+                    <li><NavLink to="/all-product"> All product</NavLink></li>
+                    
                
                </> :
                 <>
