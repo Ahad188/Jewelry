@@ -1,20 +1,21 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
  
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import UseHistory from "../../../../hookes/UseHistory";
  
 
  
 const Payhistory = () => {
      
-     const {data: history=[], refetch} = useQuery({
-          queryKey:['/dashboard/history'],
-          queryFn:async()=>{
-               const res = await fetch('http://localhost:5000/history')
-               return res.json()
-          }
-     })
-      
+     // const {data: history=[], refetch} = useQuery({
+     //      queryKey:['/dashboard/history'],
+     //      queryFn:async()=>{
+     //           const res = await fetch('http://localhost:5000/history')
+     //           return res.json()
+     //      }
+     // })
+      const [history,refetch] = UseHistory()
 
 
 
