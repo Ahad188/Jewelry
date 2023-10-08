@@ -12,10 +12,11 @@ import Mycart from "../Components/Page/Dboard/Mycart/Mycart";
 import Payment from "../Components/Page/Dboard/Payment/Payment";
 import Payhistory from "../Components/Page/Dboard/PayHis/Payhistory";
 import AdminHome from "../Components/Page/Dboard/AdminD/AdminHome/AdminHome";
-import AdminRoute from "./AdminRoute";
+ 
 import Addproduct from "../Components/Page/Dboard/AdminD/AddProudct/Addproduct";
 import ManegPro from "../Components/Page/Dboard/AdminD/ManegPro/ManegPro";
 import Allurers from "../Components/Page/Dboard/AdminD/Allurers/Allurers";
+import AdminRoute from "./AdminRoute";
  
  
  
@@ -81,7 +82,7 @@ const router = createBrowserRouter([
                },
                {
                     path:'/dashboard/allurers',
-                    element: <Allurers/>
+                    element:  <AdminRoute><Allurers/></AdminRoute>  
                }
           ]
      }

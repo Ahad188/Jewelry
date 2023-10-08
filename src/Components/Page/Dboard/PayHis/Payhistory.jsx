@@ -52,7 +52,7 @@ const Payhistory = () => {
  
   return (
      <div className="container mx-auto">
-          <h3 className="text-center font-bold text-2xl">History{history.length}</h3>
+          <h3 className="text-center font-bold text-2xl">History : {history.length}</h3>
           <div className="overflow-x-auto w-full ">
           <table className="table w-full ">
             {/* head */}

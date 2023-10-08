@@ -23,7 +23,7 @@ const Navbar = () => {
      <li><Link className="text-xl" to="/">Home</Link></li>
     <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
     {
-     user ?  <li><Link className="text-xl" to="/dashboard/my-cart">Dashboard</Link></li> :  <></>
+     user ?  <li><Link className="text-xl" to="/dashboard">Dashboard</Link></li> :  <></>
     }
      
     <li>
