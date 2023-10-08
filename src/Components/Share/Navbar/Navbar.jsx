@@ -22,7 +22,9 @@ const Navbar = () => {
      const navOptions = <>
      <li><Link className="text-xl" to="/">Home</Link></li>
     <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
-    
+    {
+     user ?  <li><Link className="text-xl" to="/dashboard/d-board">Dashboard</Link></li> :  <></>
+    }
      
     <li>
         <Link to="/dashboard/my-cart" className="text-xl">

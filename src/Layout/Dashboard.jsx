@@ -39,14 +39,14 @@ import useCart from "../hookes/useCart";
                     <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
                     <li>
                         <NavLink to="/dashboard/my-cart"><FaShoppingCart></FaShoppingCart> My Cart
-                            <span className="badge inl badge-secondary">+{cart?.length || 0}</span>
+                            <span className="badge bg-[#c7dfdf]">+{cart?.length || 0}</span>
                         </NavLink>
 
                     </li>
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
-                    <li><NavLink to="/all-product"> Our Product</NavLink></li>
-                    <li><NavLink to="#">Cart</NavLink></li>
+                    <li><NavLink to="/all-product"> All - Product</NavLink></li>
+                     
                
                
                </>
