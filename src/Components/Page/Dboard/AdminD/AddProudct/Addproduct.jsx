@@ -1,17 +1,57 @@
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../../../../hookes/useAxiosSecure";
+import Swal from "sweetalert2";
 
  
 const img_hosting = import.meta.env.VITE_IMG_HOSTING
+
+
 const Addproduct = () => {
     
+     const [axiosSecure] = useAxiosSecure()
+     
      const { register, handleSubmit, } = useForm();
-     // console.log(img_hosting_token);
+     const hosting_Url = `https://api.imgbb.com/1/upload?key=${img_hosting}`
+     
 
-   console.log(img_hosting);
+       
 
 
      const onSubmit = data => {
-           console.log(data);
+          //  console.log(data);
+           const formData = new FormData()
+               formData.append("image", data.image[0])
+
+           fetch(hosting_Url,{
+               method:'POST',
+               body: formData,
+          }).then(res=>res.json())
+           .then(imgResponse=>{
+               if(imgResponse.success){
+                    const imgURL = imgResponse.data.display_url;
+                    const {name, price, category, rating} = data;
+                    const newItem = {name, price: parseFloat(price), category, rating:parseFloat(rating), photo:imgURL}
+                    
+                    console.log(newItem);
+                    axiosSecure.post('/product', newItem)
+                    .then(data=>{
+                         console.log(data.data , "After Posting a New menu item");
+                         if(data.data.insertedId){
+                              // reset();
+                              Swal.fire({
+                                  position: 'top-end',
+                                  icon: 'success',
+                                  title: 'Item added successfully',
+                                  showConfirmButton: false,
+                                  timer: 1500
+                                })
+                          }
+                    })
+                    
+                     
+                    
+               }
+           })
           
      }
   return (
@@ -53,7 +93,7 @@ const Addproduct = () => {
         <label className="label">
             <span className="label-text"> Rating</span>
         </label>
-        <input type="number" {...register("price", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
+        <input type="number" {...register("rating", { required: true })} placeholder="Type here" className="input input-bordered w-full " />
     </div>
     <div className="form-control w-full my-4">
         <label className="label">
