@@ -10,7 +10,7 @@ const Addproduct = () => {
     
      const [axiosSecure] = useAxiosSecure()
      
-     const { register, handleSubmit, } = useForm();
+     const { register, handleSubmit,reset } = useForm();
      const hosting_Url = `https://api.imgbb.com/1/upload?key=${img_hosting}`
      
 
@@ -37,7 +37,7 @@ const Addproduct = () => {
                     .then(data=>{
                          console.log(data.data , "After Posting a New menu item");
                          if(data.data.insertedId){
-                              // reset();
+                              reset();
                               Swal.fire({
                                   position: 'top-end',
                                   icon: 'success',
