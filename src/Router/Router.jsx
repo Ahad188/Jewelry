@@ -79,7 +79,7 @@ const router = createBrowserRouter([
                },
                {
                     path:'/dashboard/manejproduct',
-                    element: <ManegPro/> 
+                    element:<AdminRoute><ManegPro/></AdminRoute>  
                },
                {
                     path:'/dashboard/allurers',

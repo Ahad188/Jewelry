@@ -1,8 +1,41 @@
-# React + Vite
+#This is a  Jewelry shop
+<p>
+This web site is an  Shop site, All user login costomer get buy product
+</p>
+------------------------
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ___ 
 
-Currently, two official plugins are available:
+#The Frame work that have been used to make the site.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  Tailwind : https://tailwindcss.com/docs/installation/play-cdn
+Daisyui tailwind : https://daisyui.com/docs/install/
+
+React Router :https://reactrouter.com/en/main
+
+React Icon : https://react-icons.github.io/react-icons/
+
+Tostyfy : https://react-icons.github.io/react-icons/
+
+React helmate :https://www.npmjs.com/package/react-helmet-async
+
+axios :https://axios-http.com/docs/intro
+
+Tanstack query :https://tanstack.com/query/latest
+
+
+___
+# Repo Link 
+
+_ Client repo : https://github.com/Ahad188/Jewelry
+
+
+server repo :  https://github.com/Ahad188/Jewelry-server
+
+___
+
+#Live side 
+___
+live link : 
+
+

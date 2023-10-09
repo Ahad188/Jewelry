@@ -5,12 +5,14 @@ import { FaCartPlus} from "react-icons/fa";
 import { useContext } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import useCart from '../../../hookes/useCart';
+import useAdmin from '../../../hookes/useAdmin';
  
 
 const Navbar = () => {
      const navigate = useNavigate()
      const {user,logOut} = useContext(AuthContext)
      const [cart] = useCart()
+     const [isAdmin] = useAdmin()
      const handelLogout=()=>{
           logOut()
           .then(
@@ -23,7 +25,7 @@ const Navbar = () => {
      <li><Link className="text-xl" to="/">Home</Link></li>
     <li><Link className="text-xl" to="/all-product">All-Jewelry</Link></li>
     {
-     user ? <li><Link className="text-xl" to="/dashboard">Dashboard</Link></li> :  <></>
+    isAdmin ? <li><Link className="text-xl" to="/dashboard/adminHome">Dashboard</Link></li> :  <li><Link className="text-xl" to="/dashboard/d-board">Dashboard</Link></li>
     }
      
     <li>

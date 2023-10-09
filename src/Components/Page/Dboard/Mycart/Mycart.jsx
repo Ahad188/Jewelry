@@ -4,13 +4,12 @@ import useCart from "../../../../hookes/useCart";
 import Swal from "sweetalert2";
 
 const Mycart = () => {
+  const [cart, refetch] = useCart();
 
-      const [cart,refetch] = useCart()
-    
   const total = cart.reduce((sum, item) => item.price + sum, 0);
 
   const handelDelate = (item) => {
-        console.log(item._id);
+    console.log(item._id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -21,7 +20,7 @@ const Mycart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${item._id}`, {
+        fetch(`https://jewelry-server-q5rp0hk9y-ahad188.vercel.app/carts/${item._id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -35,8 +34,7 @@ const Mycart = () => {
     });
   };
   return (
-     <>
-       
+    <>
       <div className="w-full ">
         <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center mt-8">
           <h3 className="text-3xl">Total Item: {cart.length}</h3>
@@ -54,7 +52,7 @@ const Mycart = () => {
               <tr>
                 <th>#</th>
                 <th>Image</th>
-                 
+
                 <th>Price</th>
                 <th>Action</th>
               </tr>
@@ -70,7 +68,7 @@ const Mycart = () => {
                       </div>
                     </div>
                   </td>
-                   
+
                   <td className="">${item.price}</td>
                   <td>
                     <button
@@ -87,7 +85,7 @@ const Mycart = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Mycart
+export default Mycart;
