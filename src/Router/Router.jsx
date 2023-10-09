@@ -5,7 +5,7 @@ import AllProduct from "../Components/Page/AllProduct/AllProduct";
 import ErrorPage from "../Components/Page/ErrorPage/ErrorPage";
 import Login from "../Components/Login/Login"; 
 import Singup from "../Components/Singup/Singup";
-import Private from "./Private";
+ 
 import Dashboard from "../Layout/Dashboard";
 import Dboard from "../Components/Page/Dboard/DbordHome/Dboard";
 import Mycart from "../Components/Page/Dboard/Mycart/Mycart";
@@ -17,6 +17,7 @@ import Addproduct from "../Components/Page/Dboard/AdminD/AddProudct/Addproduct";
 import ManegPro from "../Components/Page/Dboard/AdminD/ManegPro/ManegPro";
 import Allurers from "../Components/Page/Dboard/AdminD/Allurers/Allurers";
 import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
  
  
  
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
                },
                {
                     path:'/all-product',
-                    element:<Private><AllProduct></AllProduct></Private>
+                    element: <PrivateRoute> <AllProduct/></PrivateRoute>         
                },
                {
                     path:'/login',
@@ -49,7 +50,7 @@ const router = createBrowserRouter([
      },
      {
           path:'/dashboard',
-          element:<Private><Dashboard/></Private>,
+          element:<PrivateRoute><Dashboard/></PrivateRoute>,
           children:[
                {
                     path:'/dashboard/d-board',
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
                },
                {
                     path:'/dashboard/addProduct',
-                    element: <Addproduct/> 
+                    element:<AdminRoute><Addproduct/></AdminRoute>  
                },
                {
                     path:'/dashboard/manejproduct',

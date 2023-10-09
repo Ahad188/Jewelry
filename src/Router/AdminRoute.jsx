@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 import useAdmin from "../hookes/useAdmin";
+import { BallTriangle } from  'react-loader-spinner'
 
  
 
@@ -11,7 +12,16 @@ const AdminRoute = ({children}) => {
      const location = useLocation();
  
      if(loading || isAdminLoading){
-         return <progress className="progress w-56"></progress>
+         return  <BallTriangle
+         height={100}
+         width={100}
+         radius={5}
+         color="#4fa94d"
+         ariaLabel="ball-triangle-loading"
+         wrapperClass={{}}
+         wrapperStyle=""
+         visible={true}
+       />
      }
  
      if (user && isAdmin) {
