@@ -1,4 +1,6 @@
 #This is a  Jewelry shop
+## admin Gmail : car@gmail.com 
+##pass : 123456
 <p>
 This web site is an  Shop site, All user login costomer get buy product
 </p>
@@ -36,6 +38,6 @@ ___
 
 #Live side 
 ___
-live link : 
+live link : https://jewelry-be868.web.app
 
 
